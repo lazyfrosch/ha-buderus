@@ -21,13 +21,13 @@ def setup_platform(hass, config, add_devices, discovery_info=None):
             'Return Temperature',
             TEMP_CELSIUS,
             'mdi:thermometer',
-            '/system/sensors/temperatures/return'
+            '/heatSources/returnTemperature'
         ],
         'heatsource_modulation': [
             'Modulation',
             '%',
             'mdi:percent',
-            '/system/heatSources/hs1/actualModulation'
+            '/heatSources/hs1/actualModulation'
         ],
         'outside_temperature': [
             'Outside Temperature',
@@ -105,7 +105,7 @@ def setup_platform(hass, config, add_devices, discovery_info=None):
             'Boiler Starts',
             None,
             None,
-            '/heatSources/hs1/numberOfStarts'
+            '/heatSources/numberOfStarts'
         ],
          'hotwater_current_temperature': [
             'Hotwater Temperature',
@@ -135,13 +135,13 @@ def setup_platform(hass, config, add_devices, discovery_info=None):
             'Pump Modulation',
             None,
             None,
-            '/system/appliance/CHpumpModulation'
+            '/heatSources/CHpumpModulation'
         ],
          'system_pressure': [
             'System Pressure',
             None,
             None,
-            '/system/appliance/systemPressure'
+            '/heatSources/systemPressure'
         ],
     }
 
