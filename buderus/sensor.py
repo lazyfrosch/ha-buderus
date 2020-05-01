@@ -17,6 +17,12 @@ def setup_platform(hass, config, add_devices, discovery_info=None):
 
     global SENSOR_TYPES
     SENSOR_TYPES = {
+        'health_status': [
+            'Health Status',
+            None,
+            'mdi:radiator',
+            '/system/healthStatus'
+        ],
         'return_temperature': [
             'Return Temperature',
             TEMP_CELSIUS,
@@ -182,6 +188,11 @@ class BuderusSensor(Entity):
         self._icon = icon
         self._km_id = km_id
         self._state = None
+
+    @property
+    def entity_id(self):
+        """Return the unique entity ID"""
+        return 'sensor.buderus_' + self._sensor_type
 
     @property
     def state(self):
